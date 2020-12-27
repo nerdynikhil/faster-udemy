@@ -2,5 +2,13 @@
     "manifest_version": 2,
     "name": "Faster Udemy",
     "description": "Because, time is precious.",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "icons": {"128":"faster-udemy-128.png"},
+    "browser_action":{
+        "default_icon": "faster-udemy-logo1.png",
+        "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab"]
+
+
 }
