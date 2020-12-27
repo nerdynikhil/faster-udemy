@@ -1,14 +1,14 @@
 {
     "manifest_version": 2,
     "name": "Faster Udemy",
-    "description": "Because, time is precious.",
+    "description": "Adds a controller that provides a way to adjust playback rate in Udemy. Because, time is precious.",
     "version": "1.0.0",
     "icons": {"128":"faster-udemy-128.png"},
     "browser_action":{
         "default_icon": "faster-udemy-logo1.png",
         "default_popup": "popup.html"
     },
-    "permissions": ["activeTab"]
+    "permissions": ["activeTab","storage"]
 
 
 }
