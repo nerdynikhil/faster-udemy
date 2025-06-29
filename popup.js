@@ -21,8 +21,18 @@ function init() {
         output.innerHTML = val;
         slider.value = val;
 
-        chrome.tabs.executeScript(null, {
-            code: getUpdatePlaybackRateFn(val)
+        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+            if (tabs[0] && tabs[0].id !== undefined) {
+                chrome.scripting.executeScript({
+                    target: {tabId: tabs[0].id},
+                    func: (val) => {
+                        document.querySelectorAll('video').forEach((videoElement) => {
+                            videoElement.playbackRate = val;
+                        });
+                    },
+                    args: [val]
+                });
+            }
         });
 
         setInStorage('lastSetSpeed', val);
@@ -48,12 +58,6 @@ function init() {
             }
         });
     }
-}
-
-function getUpdatePlaybackRateFn(val) {
-    return `document.querySelectorAll('video').forEach((videoElement) => {
-        videoElement.playbackRate = ${val};
-    });`;
 }
 
 document.addEventListener('DOMContentLoaded', init);
