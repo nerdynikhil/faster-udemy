@@ -8,7 +8,7 @@
         "default_icon": "faster-udemy-logo1.png",
         "default_popup": "popup.html"
     },
-    "permissions": ["activeTab","storage", "scripting"]
-
-
+    "permissions": ["activeTab","storage", "scripting"],
+    "homepage_url": "https://nerdynikhil.github.io/faster-udemy/",
+    "privacy_policy": "https://nerdynikhil.github.io/faster-udemy/privacy.html"
 }
